@@ -1,0 +1,14 @@
+<div class="card">
+    <h3 class="card-title">{{product!.title}}</h3>
+    <span class="card-subtitle">{{product?.category | uppercase}}</span>
+    <img class="card-img" src="{{product!.image}}">
+    <p class="card-description">{{product!.description}}</p>
+    <span class="card-price">{{product!.price | currency}}</span>
+    <div class="input-group-mb-3">
+        <button class="btn btn-outline-secondary" (click)="addToBasket(-1)" type="button">*</button>
+        <input type="number" (change)="countChange()" [(ngModel)]="count" min="0" class="form-control" placeholder=""
+            aria-label="">
+        <button class="btn btn-outline-secondary" (click)="addToBasket(1)" type="button">*</button>
+
+    </div>
+</div>

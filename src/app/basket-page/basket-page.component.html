@@ -1,0 +1,8 @@
+<span *ngIf="!productList">Loading...</span>
+<div class="card-list" *ngIf="productList">
+    <span *ngIf="productList.length==0">Empty Data...</span>
+    <app-basket-product *ngFor="let product of productList" [basketProduct]="product"
+        [InBasketPage]="true"></app-basket-product>
+
+    <a href="/order">Proceed</a>
+</div>

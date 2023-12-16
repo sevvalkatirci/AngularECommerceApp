@@ -1,0 +1,16 @@
+<div class="card">
+    <button (click)="removeFromBasket()" *ngIf="InBasketPage">Remove</button>
+    <div class="title-container">
+        <img class="card-img col-6" src="{{basketProduct!.product.image}}">
+        <span class="card-title col-6">{{basketProduct!.product?.title| uppercase}}</span>
+    </div>
+    <p class="card-subtitle">Count: {{basketProduct!.count}}</p>
+    <span class="card-price">{{basketProduct!.product.price * basketProduct!.count| currency}}</span>
+    <div class="input-group-mb-3" *ngIf="InBasketPage">
+        <button class="btn btn-outline-secondary" (click)="addToBasket(-1)" type="button">*</button>
+        <input type="number" (change)="countChange()" [(ngModel)]="basketProduct!.count" min="0" class="form-control"
+            placeholder="" aria-label="">
+        <button class="btn btn-outline-secondary" (click)="addToBasket(1)" type="button">*</button>
+
+    </div>
+</div>
